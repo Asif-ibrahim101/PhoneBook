@@ -25,22 +25,18 @@ const Form = ({ addPerson, persons }) => {
     }
   };
 
-  const HandleChangeName = (e) => {
+  const HandleChange = (e) => {
     setNewName(e.target.value);
-  };
-
-  const HandleChangeNum = (e) => {
-    setNewNum(e.target.value);
   };
 
   return (
     <form onSubmit={OnSubmit}>
       <div>
-        Name: <input value={newName} onChange={HandleChangeName} placeholder='Enter your name' />
+        Name: <input value={newName} onChange={HandleChange} placeholder='Enter your name' />
       </div>
 
       <div>
-        Number: <input value={newNum} onChange={HandleChangeNum} placeholder='Enter your number' />
+        Number: <input value={newNum} onChange={HandleChange} placeholder='Enter your number' />
       </div>
 
       <div>
