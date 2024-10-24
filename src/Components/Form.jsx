@@ -19,28 +19,22 @@ const Form = ({ addPerson, persons }) => {
         number: newNum,
         id: Date.now() // Generate unique ID
       };
-      addPerson(PersonsObj); // Call the addPerson function passed from App
+      addPerson(PersonsObj); // Call the addPerson function to send the new person to the JSON server
       setNewName('');
       setNewNum('');
     }
   };
 
-  const HandleChange = (e) => {
-    setNewName(e.target.value);
-  };
-
   return (
     <form onSubmit={OnSubmit}>
       <div>
-        Name: <input value={newName} onChange={HandleChange} placeholder='Enter your name' />
+        Name: <input value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Enter your name" />
       </div>
-
       <div>
-        Number: <input value={newNum} onChange={HandleChange} placeholder='Enter your number' />
+        Number: <input value={newNum} onChange={(e) => setNewNum(e.target.value)} placeholder="Enter your number" />
       </div>
-
       <div>
-        <button type='submit'>Add</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );
